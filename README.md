@@ -3,10 +3,10 @@
 
 可以从首页依次进入各个分支页面。
 
-![index](design/index.png)
+![index](design/index.png =550x550)
 
-![button](design/button.png)
+![button](design/button.png  =550x550)
 
-![accordion](design/accordion.png)
+![accordion](design/accordion.png  =550x550)
 
-![label](design/label.png)
+![label](design/label.png  =550x550)
