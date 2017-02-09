@@ -1,0 +1,169 @@
+
+//背景色设定，按钮填充
+.bg-default,.button-default.button-fill{
+  color: $white;
+  background-color: $color-default;
+}
+.bg-primary,.button-primary.button-fill{
+  color: $white;
+  background-color: $color-primary;
+}
+.bg-success,.button-success.button-fill{
+  color: $white;
+  background-color: $color-success;
+}
+.bg-info,.button-info.button-fill{
+  color: $white;
+  background-color: $color-info;
+}
+.bg-warning,.button-warning.button-fill{
+  background-color: $color-warning;
+  color: $color-fb;
+}
+.bg-danger,.button-danger.button-fill{
+  color: $white;
+  background-color: $color-danger;
+}
+.bg-disable,.button-disable.button-fill{
+  color: $gray-light;
+  background-color: $color-disable;
+}
+.bg-fa,.button-fa.button-fill{
+  color: $white;
+  background-color: $color-fa;
+}
+
+// 按钮增加边框
+.button{
+  border: 1px solid $color-primary;
+  &.button-big{
+    height: px(39);
+    line-height: px(39);
+    &.button-fill{
+      line-height: px(39);
+    }
+  }
+}
+
+
+
+// 按钮边框颜色设定
+.button-primary{
+  color: $color-primary;
+  border-color: $color-primary-border;
+}
+.button-success{
+  color: $color-success;
+  border-color: $color-success-border;
+}
+.button-info{
+  color: $color-info;
+  border-color: $color-info-border;
+}
+.button-warning{
+  color: $color-warning;
+  border-color: $color-warning-border;
+}
+.button-danger{
+  color: $color-danger;
+  border-color: $color-danger-border;
+}
+.button-disable{
+  color: $color-disable;
+  border-color: $color-disable-border;
+  pointer-events: none;
+  cursor: default;
+}
+.button-fa{
+  color: $color-fa;
+  border-color: $color-fa-border;
+}
+
+
+//设置按钮按下激活状态样式
+.button-success.button-fill:active{
+  background-color: $color-success-active;
+}
+.button-primary.button-fill:active{
+  background-color: $color-primary-active;
+}
+.button-info.button-fill:active{
+  background-color: $color-info-active;
+}
+.button-danger.button-fill:active{
+  background-color: $color-danger-active;
+}
+.button-warning.button-fill:active{
+  background-color: $color-warning-active;
+}
+.button-disable.button-fill:active{
+  background-color: $color-disable;
+}
+.button-fa.button-fill:active{
+  background-color: $color-fa-active;
+}
+
+//设置小按钮的样式
+.button{
+  font-size: px(15);
+  height: px(32);
+  line-height: px(32);
+}
+.button.button-fill{
+  line-height: px(32);
+}
+
+//设置中等按钮的样式
+.button.button-big{
+  font-size: px(17);
+  height: px(39);
+  line-height: px(39);
+}
+
+
+.button-lit{
+  height: px(27);
+  line-height: px(27);
+  font-size: px(12);
+}
+.button.button-lit{
+  line-height: px(27);
+  border-radius: px(1000);
+  display: inline-block;
+  padding:0 px(12);
+}
+
+/*
+++++++++++++++++++++++++++++++++++++++++++++++
+
+表单的 switch 按钮样式修改
+
+++++++++++++++++++++++++++++++++++++++++++++++
+*/
+
+
+.item-input.item-input-switch{
+  width: auto;
+}
+
+.label-switch .checkbox {
+  width: 2.5rem; 
+  height: 1.2rem; 
+}
+.label-switch .checkbox:before{
+  height: 1rem;
+  width: 2.3rem;
+}
+
+.label-switch .checkbox:after {
+  height: 1rem;
+  width: 1rem; 
+}
+
+.label-switch input[type=checkbox]:checked + .checkbox:after {
+  transform: translateX(1.25rem); 
+}
+
+.label-switch input[type="checkbox"]:checked + .checkbox{
+  background-color: $color-success;
+}

@@ -1,0 +1,80 @@
+
+/*
+++++++++++++++++++++++++++++++++++++++++++++
+
+手风琴效果
+
+++++++++++++++++++++++++++++++++++++++++++++
+*/
+.accordion-item{
+    margin: 0 0 px(1) 0;
+    position: relative;
+  &:after{
+    content: '';
+    background-color: $gray-lighterb;
+    height: px(1);
+    transform: scaleY(.5);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: 999;
+    display: block;
+  }
+}
+
+.collapse{
+  display: none
+}
+.collasing{
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  transition: height .3s ease;
+}
+.in{
+  display: block;
+}
+.accordion-title{  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: px(10) px(15);
+//  background-color: $color-primary;
+//  color: $white;
+    color: $color-primary;
+//    color: $gray;
+    position: relative;
+}
+.accordion-body{
+  overflow: hidden;
+  transition: height .3s ease;
+  margin: 0;
+}
+.accordion-content{
+  padding-top:px(10);
+  padding-bottom:px(10);
+
+}
+.accordion-icon{
+  transform: rotate(0deg);
+  transition: transform .3s;
+  font-size: px(12);
+  color: $gray;
+}
+.active{
+    .accordion-icon{
+      transform: rotate(90deg);
+    }
+    .accordion-title:after{
+        content: "";
+        height: px(1);
+        transform: scaleY(.5);
+        bottom: 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+        background-color: $gray-lightest;
+    }
+} 

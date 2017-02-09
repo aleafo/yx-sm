@@ -1,0 +1,39 @@
+/*
+++++++++++++++++++++++++++++++++++++++++++++
+
+表单，弹出popup 选择列表
+
+++++++++++++++++++++++++++++++++++++++++++++
+*/
+.select-radio{
+  width: px(16);
+  height: px(16);
+  line-height: px(16);
+  border: 1px solid $gray-lighter;
+  border-radius: px(1000);
+  &:before{
+    display: none;
+  }
+}
+.active .select-radio{
+  font-size: px(17);
+  border: none;
+  &:before{
+    color: $color-success;
+    border: none;
+    display: inline-block;
+  }
+}
+.disable .select-radio{
+  font-size: px(17);
+  border: none;
+  &:before{
+    color: $gray-lighterb;
+    border: none;
+    display: inline-block;
+  }
+}
+
+.bar .searchbar .searchbar-cancel{
+    color: $color-primary;
+}

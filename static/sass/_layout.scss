@@ -1,0 +1,210 @@
+/*
+++++++++++++++++++++++++++++++++++++++++++++
+
+ 关于布局 的样式
+
+++++++++++++++++++++++++++++++++++++++++++++
+*/
+
+.bar{
+  height: px(42);
+  .title{
+    line-height: px(42);
+    font-size: px(18);
+  }
+}
+.bar-nav~.content{
+  top: px(42);
+}
+
+
+.bar-link{
+  position: relative;
+  color: $white;
+  height: px(42);
+  line-height: px(42);
+  font-size: px(14);
+    .icon{
+        font-size: px(14);
+    }
+}
+
+.bar-header-secondary{
+  top: px(42);
+  z-index: 9999;
+  background-color: $white;
+  height: px(37);
+  line-height: px(37);
+  left: 0;
+    right: 0;
+    position: absolute;
+}
+
+.bar-header-secondary~.content{
+  top: px(79);
+}
+/*
+++++++++++++++++++++++++++++++++++++++++++++
+
+搜索框
+
+++++++++++++++++++++++++++++++++++++++++++++
+*/
+.bar .searchbar{
+  .searchbar-cancel{
+    color: $gray-light;
+    font-size: px(14);
+  }
+  background: $gray-lighterb;
+}
+.search-input input{
+  border-radius: 1000px;
+  background-color: $white;
+}
+/*
+++++++++++++++++++++++++++++++++++++++++++++
+
+对于带有底部固定按钮的内容部分应用该样式，确保底部内容不被按钮覆盖
+
+++++++++++++++++++++++++++++++++++++++++++++
+*/
+.content-md{
+  bottom: px(60);
+}
+
+/*
+++++++++++++++++++++++++++++++++++++++++++++
+
+表单部分
+
+++++++++++++++++++++++++++++++++++++++++++++
+*/
+.list-block{
+  margin-top: 0;
+}
+// 表单信息分组
+.list-block .item-content-group{
+  margin-bottom: px(5);
+  &:after{
+    display: block;
+    content: " ";
+    background-color: $gray-lightest;
+    height: px(5);
+    bottom: px(-5);
+    position: absolute;
+    transform: scaleY(1);
+    width: 100%;
+    right: 0;
+    left: 0;
+  }
+  li:last-child .item-inner:after{
+    display: none;
+  }
+}
+
+.list-block{
+
+  font-size: px(15);
+
+  ul:before{
+    display: none;
+  }
+  ul:after{
+    display: none;
+    width: auto;
+    left: px(15);
+    right: px(15);
+  }
+  
+  //列表中的底部边线，右侧不要到头
+  .item-inner:after{
+    width: auto;
+    right: px(15);
+  }
+  //对于默认的表单信息，信息颜色标题深色，内容浅色
+  .item-title{
+    color: $gray-dark;
+  }
+  .item-after{
+    color: $gray; //333
+  }
+  textarea{
+    padding-left: 0;
+  }
+  
+  //修复选择框右侧箭头点击问题
+  .item-link-input{
+    .item-inner{
+      padding-right: 0;
+      input,textarea{
+        background:transparent;
+      }
+      input{
+        padding-right: 1.5rem;
+        text-align: right;
+      }
+    }
+  }
+
+  //单选列表页面带头像的情况，布局
+  .item-before{
+    display: flex;
+    justify-content: flex-start;
+    align-items:  center;
+    .item-media  img{
+        width: px(40);
+        height: px(40);
+        border-radius: 1000px;
+        margin-right: px(15);
+    }
+  }
+
+}
+
+
+/*
+++++++++++++++++++++++++++++++++++++++++++++
+
+表单，对于列表中信息展示时，信息左对齐
+
+++++++++++++++++++++++++++++++++++++++++++++
+*/
+
+.item-content-info{
+  .item-inner{
+    justify-content:flex-start;
+    .item-title{
+      width: px(100);
+      color: $gray;
+    }
+  }
+  .item-after{
+    color: $gray-dark; //333
+  }
+}
+
+
+.list-block .item-inner-nobt{
+    &:after{
+        display: none;
+    }
+}
+
+
+
+/*
+++++++++++++++++++++++++++++++++++++++++++++
+
+页脚固定在底部的按钮，修复位置
+
+++++++++++++++++++++++++++++++++++++++++++++
+*/
+.bar-footer-fixed{
+  position: absolute;
+  padding: px(10);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+}
+

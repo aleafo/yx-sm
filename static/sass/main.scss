@@ -1,0 +1,278 @@
+@import "_iconfont.scss";
+@import "_vars.scss";
+@import "_functions.scss";
+@import "_layout.scss";
+@import "_button.scss";
+@import "_accordion.scss";
+@import "_label.scss";
+@import "_tabs.scss";
+@import "_popup.scss";
+
+
+
+/*
+++++++++++++++++++++++++++++++++++++++++++++++
+
+覆盖布局
+
+++++++++++++++++++++++++++++++++++++++++++++++
+*/
+body, .page{
+  color: $gray-dark;
+  background-color: $white;
+  font-family: -apple-system-font,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+
+
+.color-default{
+  color: $color-default!important;
+}
+.color-primary{
+  color: $color-primary!important;
+}
+.color-success{
+  color: $color-success!important;
+}
+.color-info{
+  color: $color-info!important;
+}
+.color-warning{
+  color: $color-warning!important;
+}
+.color-danger{
+  color: $color-danger!important;
+}
+.color-disable{
+  color: $color-disable!important;
+}
+
+.actions-modal-button{
+  font-size: px(15);
+  color: $gray-dark;
+  background-color: $white;
+}
+.actions-modal-group{
+  margin: px(5) px(8);
+}
+.actions-modal-button:after, .actions-modal-label:after{
+  background-color: $gray-lighterb;
+}
+
+.modal{
+    .modal-title{
+        font-size: px(17);
+        color: $gray-dark;
+    }
+    .modal-text{
+        font-size: px(15);
+        color: $gray;
+    }
+    
+}
+
+.banner{
+    font-size: 0;
+    line-height: 0;
+    img{  
+      max-width: 100%;
+    }
+}
+
+/*
+++++++++++++++++++++++++++++++++++++++++++++++
+
+表单的 placeholder 颜色
+
+++++++++++++++++++++++++++++++++++++++++++++++
+*/
+
+.list-block input[type=text],.list-block[placeholder], .list-block input[type=password], .list-block input[type=email], .list-block input[type=tel], .list-block input[type=url], .list-block input[type=date], .list-block input[type=datetime-local], .list-block input[type=time], .list-block input[type=number], .list-block input[type=search], .list-block select, .list-block textarea{
+  color: $gray;
+  font-size: px(15);
+}
+::-webkit-input-placeholder{
+    color: $gray-light!important;
+    font-size: px(15);
+}
+.search-input input::-webkit-input-placeholder{
+  font-size: px(14);
+}
+
+/*
+++++++++++++++++++++++++++++++++++++++++++++++
+
+表单的 日期时间控件 颜色
+
+++++++++++++++++++++++++++++++++++++++++++++++
+*/
+.picker-modal{
+  background-color: $gray-lightestb;
+  .bar{
+    background-color: $gray-lightest;
+    .title{
+      font-size: px(14);
+      color: $gray-dark;
+    }
+
+    .button-link{
+      font-size: px(14);
+      color: $color-primary;
+    }
+
+  }
+}
+.picker-items{
+  font-size: px(15);
+  width: 100%;
+  text-align: center;
+}
+.picker-item{
+  padding:0 px(20);
+  &.picker-selected{
+    font-size: px(15);
+    z-index: 999;
+  }
+}
+.picker-modal .bar:before,.picker-modal .bar:after{
+  background-color: $gray-lighter;
+}
+
+.picker-center-highlight{
+  z-index: -1;
+  background-color:$white;
+}
+
+
+/*
+++++++++++++++++++++++++++++++++++++++++++++++
+
+弹出菜单
+
+++++++++++++++++++++++++++++++++++++++++++++++
+*/
+.modal-inner{
+  background-color: $white;
+  padding: px(25) px(20);
+  &:after{
+    background-color: $gray-lighterb;
+  }
+}
+.modal-buttons .modal-button{
+  color: $gray-light;
+  background-color: $white;
+  &:after{
+    background-color: $gray-lighterb;
+    transform: scaleY(1)!important;
+  }
+  &.modal-button-bold{
+    color: $color-primary;
+    font-weight: normal;
+  }
+}
+/*
+++++++++++++++++++++++++++++++++++++++++++++++
+
+海豚提醒
+
+++++++++++++++++++++++++++++++++++++++++++++++
+*/
+
+.dolphin-tips{
+  color: $color-fa;
+  margin-top: px(80);
+  position: relative;
+  font-size: px(12);
+  // margin-left: px(15);
+  // margin-right: px(15);
+  background: url(../img/wave.png) repeat-x #fffaea;
+  background-size: 6%;
+  padding: px(20);
+  padding-top: px(40);
+  border-bottom-left-radius: .5rem;
+  border-bottom-right-radius: .5rem;
+  animation: tipswave 12s linear infinite;
+  .dolphin-icon{
+    display: block;
+    position: absolute;
+    width: px(76);
+    height: px(76);
+    top: px(-48);
+    left: 50%;
+    margin-left: px(-38);
+    background-image: url(../img/dolphin.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: dolphinjump 2.5s ease infinite;  //ios下 拖动不松开的情况下会出现画面抖动的情况
+  }
+
+}
+@keyframes tipswave{
+  0%{
+    background-position: 0% 0%;
+  }
+  50%{
+    background-position: 50% 0%;
+  }
+  100%{
+    background-position: 100% 0%;
+  }
+}
+
+@keyframes dolphinjump{
+  0%{
+    transform: translateY(-.25rem);
+  }
+  50%{
+    transform: translateY(.25rem);
+  }
+  100%{
+    transform: translateY(-.25rem);
+  }
+}
+
+/*
+++++++++++++++++++++++++++++++++++++++++++++++
+
+提示文本样式
+
+++++++++++++++++++++++++++++++++++++++++++++++
+*/
+.box-tips{
+  margin: px(10) 0;
+  font-size: px(12);
+  color: $gray-lighter;
+  text-align: center;
+}
+
+/*
+++++++++++++++++++++++++++++++++++++++++++++++
+
+赢信慧通版权所有样式
+
+++++++++++++++++++++++++++++++++++++++++++++++
+*/
+.yx-cp{
+    width: 75%;
+    margin: px(30) auto;
+    text-align: center;
+    position: relative;
+    .cp-text{
+      position: relative;
+      padding: 0 px(8);
+      font-size: px(12);
+      color: $gray-lighter;
+      background-color: $white;
+    }
+    &:before{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        font-size: 0;
+        background-color: $gray-lighter;
+        height: 1px;
+        transform: scaleY(0.5);
+        transform-origin: 50% 100%;
+    }
+}

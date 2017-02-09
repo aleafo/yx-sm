@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>yx-sm</title>
+    <link rel="stylesheet" href="http://yx.0163.org/static/css/sm.min.css">
+    <link rel="stylesheet" href="http://yx.0163.org/static/css/main.css">
+    <style>
+        .calendar-tit {
+            border-bottom: 1px solid #E8E8E8;
+            padding-bottom: .4rem;
+        }
+
+        .calendar-tit span {
+            display: inline-block;
+            font-size: .8rem;
+            vertical-align: middle;
+        }
+
+        .calendar-tit i.icon {
+            font-size: .6rem;
+            vertical-align: middle;
+        }
+
+        .calendar-body table {
+            width: 100%;
+            text-align: center;
+        }
+
+        .calendar-body table th {
+            font-weight: normal;
+            font-size: .7rem;
+            height: 2rem;
+            line-height: 2rem;
+        }
+
+        .calendar-body table td {
+            padding: .2rem 0;
+        }
+
+        .status_daka, .status_qingjia, .status_daka_qingjia, .status_normal {
+            display: inline-block;
+            width: 1.5rem;
+            height: 1.5rem;
+            overflow: hidden;
+            border-radius: 100px;
+            text-align: center;
+            line-height: 1.5rem;
+            color: #fff;
+            font-size: .6rem;
+        }
+
+        .status_daka {
+            background: #91D91C;
+        }
+
+        .status_qingjia {
+            background: #FFCC00
+        }
+
+        .status_daka_qingjia {
+            background: #FF5B95
+        }
+
+        .status_normal {
+            background: none;
+            color: #333;
+        }
+
+        .attendance-calendar-tip {
+            text-align: center;
+            padding: .5rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="page page-current" id="app">
+
+    <header class="bar bar-nav">
+        <h1 class="title bg-primary">赢信慧通SUI皮肤333</h1>
+        <a href="#" class="bar-link pull-right">编辑</a>
+    </header>
+    <!-- end of header -->
+
+
+    <div class="content content-md">
+        <attendance-calendar ref="calendar" :ajaxurl="calendar_ajaxUrl"
+                             :searchparam="calendar_searchparam"></attendance-calendar>
+
+
+    </div>
+    <!-- end of content -->
+
+
+    <!-- 底部固定按钮 -->
+    <div class="bar-footer-fixed">
+        <div class="row">
+            <div class="col-50">
+                <a href="#" class="button button-big button-fill button-success" id="confirm-ok-cancel">弹出窗口</a>
+            </div>
+            <div class="col-50">
+                <a href="button.html" class="button button-big button-fill button-fa">按 &nbsp;钮</a>
+            </div>
+        </div>
+    </div>
+    <!-- 底部固定按钮结束 -->
+
+</div>
+<!-- end of page -->
+
+
+<script type="text/javascript" src="http://yx.0163.org/static/js/zepto.min.js"></script>
+<script type="text/javascript" src="http://yx.0163.org/static/js/sm.min.js"></script>
+<script src="//cdn.bootcss.com/vue/2.1.8/vue.min.js"></script>
+
+<script type="text/javascript">
+    Vue.component('attendance-calendar', {
+        props: ['ajaxurl', 'searchparam'],
+        data: function () {
+            return {
+                searchObj: this.searchparam,
+                calendarBody: '',
+                ajaxUrl: this.ajaxurl
+            }
+        },
+        template: '<div class="calendar-wrap">' +
+        '<div class="row no-gutter calendar-tit">' +
+        '<div class="col-33 align-left"><i class="icon icon-left"></i><span @click="buildCalendar(1)">上月</span></div>' +
+        '<div class="col-33 align-center">{{currDateTxt}}</div>' +
+        '<div class="col-33 align-right"><span @click="buildCalendar(2)">下月</span><i class="icon icon-right"></i></div>' +
+        '</div>' +
+        '<div class="calendar-body" v-html="calendarBody"></div>' +
+        '</div>',
+        methods: {
+            getListData: function (url, param, sucFun) {
+                $.ajax({
+                    type: 'GET',
+                    url: url,
+                    data: param,
+                    dataType: 'json',
+                    beforeSend: function () {
+                        $.showIndicator();
+                    },
+                    success: function (res) {
+                        if (sucFun) {
+                            sucFun(res);
+                        }
+                    },
+                    error: function (xhr, type) {
+                        $.toast('网络错误,请重新再试');
+                    },
+                    complete: function () {
+                        $.hideIndicator();
+                    }
+                })
+            },
+            buildCalendar: function (type) {
+                var self = this;
+
+                // 上个月
+                if (type == 1) {
+                    this.getPreMonth(this.searchObj.currdate);
+                } else if (type == 2) { //下个月
+                    this.getNextMonth(this.searchObj.currdate);
+                }
+
+                // ajax获取数据
+                this.getListData(this.ajaxUrl, this.searchObj, function (res) {
+                    self.buildCalendarBody(self.searchObj.currdate, res.list);
+                });
+            },
+            // 获取上个月
+            getPreMonth: function (date) {
+                var arr = date.split('-');
+                var year = arr[0]; //获取当前日期的年份
+                var month = arr[1]; //获取当前日期的月份
+                var day = arr[2]; //获取当前日期的日
+                var days = new Date(year, month, 0);
+                days = days.getDate(); //获取当前日期中月的天数
+                var year2 = year;
+                var month2 = parseInt(month) - 1;
+                if (month2 == 0) {
+                    year2 = parseInt(year2) - 1;
+                    month2 = 12;
+                }
+                var day2 = day;
+                var days2 = new Date(year2, month2, 0);
+                days2 = days2.getDate();
+                if (day2 > days2) {
+                    day2 = days2;
+                }
+                if (month2 < 10) {
+                    //month2 = '0' + month2;
+                }
+                var t2 = year2 + '-' + month2 + '-' + day2;
+                this.searchObj.currdate = t2;
+            },
+            // 获取下个月
+            getNextMonth: function (date) {
+                var arr = date.split('-');
+                var year = arr[0]; //获取当前日期的年份
+                var month = arr[1]; //获取当前日期的月份
+                var day = arr[2]; //获取当前日期的日
+                var days = new Date(year, month, 0);
+                days = days.getDate(); //获取当前日期中的月的天数
+                var year2 = year;
+                var month2 = parseInt(month) + 1;
+                if (month2 == 13) {
+                    year2 = parseInt(year2) + 1;
+                    month2 = 1;
+                }
+                var day2 = day;
+                var days2 = new Date(year2, month2, 0);
+                days2 = days2.getDate();
+                if (day2 > days2) {
+                    day2 = days2;
+                }
+                if (month2 < 10) {
+                    //month2 = '0' + month2;
+                }
+
+                var t2 = year2 + '-' + month2 + '-' + day2;
+                this.searchObj.currdate = t2;
+            },
+            //生成打卡记录日历
+            // 1:已打卡 2:请假 3.打卡+请假
+            // data   [{"2016-11-1":1},{"2016-11-2":1}, ...]
+            buildCalendarBody: function (currdate, data) {
+                var currdateArr = currdate.split("-");
+                var y = currdateArr[0];
+                // js中月份是从0-11计算的.
+                var m = parseInt(currdateArr[1]) - 1;
+
+                var d = parseInt(currdateArr[2]);
+                var i, k, today = new Date();
+                var firstday = new Date(y, m, 1) //获取当月的第一天
+
+                var dayOfWeek = firstday.getDay() //判断第一天是星期几(返回[0-6]中的一个，0代表星期天，1代表星期一，以此类推)
+                //alert(this.isLeap(y));
+                var days_per_month = new Array(31, 28 + this.isLeap(y), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31) //创建月份数组
+                var str_nums = Math.ceil((dayOfWeek + days_per_month[m]) / 7); //确定日期表格所需的行数
+
+                var allHtml = "<table cellspacing='0'><tr><th>日</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th></tr>";
+                var nowDay = today.getDate();
+                for (i = 0; i < str_nums; i += 1) { //二维数组创建日期表格
+                    allHtml += '<tr>';
+                    for (k = 0; k < 7; k++) {
+                        var idx = 7 * i + k; //为每个表格创建索引,从0开始
+                        var date = idx - dayOfWeek + 1; //将当月的1号与星期进行匹配
+
+
+                        (date <= 0 || date > days_per_month[m]) ? date = ' ' : date = idx - dayOfWeek + 1; //索引小于等于0或者大于月份最大值就用空表格代替
+                        var istoday = date == d ? " today" : "";
+                        var statusCss = "";
+                        var url = "#"
+                        if (date != ' ') {
+                            url = data[date - 1]['url'] ? data[date - 1]['url'] : "#";
+                            switch (data[date - 1]['day-' + date]) {
+                                case 1:
+                                    statusCss = " status_daka";
+                                    break;
+                                case 2:
+                                    statusCss = " status_qingjia";
+                                    break;
+                                case 3:
+                                    statusCss = " status_daka_qingjia";
+                                    break;
+                                default:
+                                    statusCss = " status_normal";
+                                    break;
+                            }
+                            allHtml += ('<td><a href="' + url + '" class="external' + istoday + statusCss + '">' + date + '</a></td>');
+                        } else {
+                            allHtml += ('<td><a class="external' + istoday + statusCss + '">' + date + '</a></td>');
+                        }
+
+
+                    }
+                    allHtml += '</tr>';
+                }
+                allHtml += '</table>';
+                this.calendarBody = allHtml;
+            },
+            //判断当前年份是否是闰年(闰年2月份有29天，平年2月份只有28天)
+            isLeap: function (year) {
+                return year % 4 == 0 ? (year % 100 != 0 ? 1 : (year % 400 == 0 ? 1 : 0)) : 0;
+            }
+        },
+        created: function () {
+            // 第一次加载当前月的日历.
+            if(!this.searchObj.currdate){
+                            
+                var dt = new Date();
+                var dtStr = dt.getFullYear() + '-' + (dt.getMonth()+1) + '-' + dt.getDate();
+                
+                this.searchObj = Object.assign({}, this.searchObj, {'currdate': dtStr});
+            }
+            this.calendarBody = this.buildCalendar();
+        },
+        computed: {
+            // 显示日历当前年月.
+            currDateTxt: function () {
+                var currDateArr = this.searchObj.currdate.split("-");
+                console.log(currDateArr);
+                return currDateArr[0] + "年" + currDateArr[1] + "月";
+            }
+        }
+    });
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            calendar_ajaxUrl: 'attendance-calendar.json',
+            calendar_searchparam: {
+                currdate2: '2016-1-22',
+//                currdate: '2016-1-22',
+                userid: '11111',
+                username: '333'
+            }
+        },
+        methods: {
+
+        },
+        created: function () {
+            var self = this;
+
+
+        }
+    });
+</script>
+</body>
+</html>

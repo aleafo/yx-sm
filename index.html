@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>yx-sm</title>
+  <link rel="stylesheet" href="static/css/sm.min.css">
+  <link rel="stylesheet" href="static/css/main.css">
+</head>
+<body>
+<div class="page page-current">
+
+<header class="bar bar-nav">
+  <h1 class="title bg-primary">赢信慧通SUI皮肤333</h1>
+  <a href="#" class="bar-link pull-right">编辑</a>
+</header>
+<!-- end of header -->
+
+
+<!-- 搜索框 -->
+<div class="bar bar-header-secondary">
+  <div class="searchbar">
+    <a class="searchbar-cancel">取消</a>
+    <div class="search-input">
+      <label class="icon icon-search" for="search"></label>
+      <input type="search" id='search' placeholder='输入关键字...'/>
+    </div>
+  </div>
+</div>
+<!-- END OF 搜索框 -->
+
+<div class="content content-md">
+
+  <div class="list-block">
+    <form action="#">
+
+      <!-- 信息输入表单 -->
+      <!-- 使用方法： 使用ul.item-content-group 来对表单进行分组 -->
+
+      <ul class="item-content-group">
+        <li>
+          <div class="item-content item-link-input">
+            <div class="item-inner">
+              <div class="item-title label">英雄名称</div>
+              <div class="item-input">
+                <input type="text" class="item-after-input" value="拉克丝">
+              </div>                          
+            </div>
+          </div>
+        </li>
+        <li>
+        <div class="item-content item-link">
+            <div class="item-inner" id="select-opt">
+              <div class="item-title">选择技能</div>
+              <div class="item-after">请选择技能</div>  
+            </div>
+          </div>
+        </li>
+        <li>
+        <div class="item-content item-link item-link-input">
+            <div class="item-inner" id="select-popup">
+              <div class="item-title label">选择搭档</div>
+              <div class="item-input">
+                  <input type="text" class="item-after-input" readonly id="partner-input" placeholder="选择搭档">
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+        <div class="item-content item-link item-link-input">
+            <div class="item-inner" id="select-popup-multi">
+              <div class="item-title label">选择搭档[多选]</div>
+              <div class="item-input">
+                  <input type="text" class="item-after-input" readonly id="partner-input-multi" placeholder="选择搭档[多选]">
+              </div>
+            </div>
+          </div>
+        </li>
+        </ul>
+        <ul class="item-content-group">
+        <li>
+          <div class="item-content item-link item-link-input">
+            <div class="item-inner">
+              <div class="item-title label">日期</div>
+              <div class="item-input">
+                <input type="text" id="date" name="date"  class="item-after-input" value="2016-12-20">
+              </div>                          
+            </div>
+          </div>
+        </li>
+        <li>
+       <div class="item-content">
+         <div class="item-inner">
+           <div class="item-title label">开关</div>
+           <div class="item-input item-input-switch">
+             <label class="label-switch">
+               <input type="checkbox">
+               <div class="checkbox"></div>
+             </label>
+           </div>
+         </div>
+       </div>
+     </li>
+        <li class="item-content item-link item-link-input">
+          <div class="item-inner">
+            <div class="item-title label">生产日期</div>
+            <div class="item-input">
+              <input type="text" id="datetime" name="datetime"  class="item-after-input" value="2016-12-20 18:00">
+            </div>
+          </div>
+        </li>
+        <li>
+          <!-- 对于文本域的标题，独占一行的标题  使用 item-content-caption -->
+          <div class="item-content item-content-caption">
+            <div class="item-inner">
+              <div class="item-title label">英雄描述</div>
+            </div>
+          </div>
+          <div class="item-content">
+            <div class="item-inner item-inner-nobt">
+              <div class="item-input">
+                <textarea name="" id="" cols="30" rows="10" placeholder="在这里输入英雄描述"></textarea>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      
+      <!-- 使用方法：使用item-content-info 来是的内容部分靠左对齐，实现信息和标题颜色对调，用来显示信息 -->
+      <ul class="item-content-group item-content-info">
+        <li>
+          <div class="item-content">
+            <div class="item-inner">
+              <div class="item-title">加点顺序</div>
+              <div class="item-after">主E副Q</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <div class="item-inner">
+              <div class="item-title">英雄类型</div>
+              <div class="item-after">法师</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <div class="item-inner">
+              <div class="item-title">施法距离</div>
+                <div class="item-after">3200</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <div class="item-content">
+            <div class="item-inner">
+              <div class="item-title">加点顺序</div>
+              <div class="item-after">主E副Q</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <div class="item-inner">
+              <div class="item-title">英雄类型</div>
+              <div class="item-after">法师</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <div class="item-inner">
+              <div class="item-title">施法距离</div>
+                <div class="item-after">3200</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+    </form>
+  </div>
+  <!-- end of list-block -->
+
+
+
+<!-- 海豚提示 -->
+ <div class="dolphin-tips">
+    <span class="dolphin-icon"></span>
+    <div class="tips-box">
+      温馨提示：孩子的请假申请会由孩子班主任审核。老师的请假申请由校领导审核。
+    </div>
+  </div>
+<!-- end of 海豚提示 -->
+
+
+<!-- 版权所有 -->
+  <div class="yx-cp"><span class="cp-text">天天在线 &copy; 青岛赢信慧通</span></div>
+
+</div>
+<!-- end of content -->
+
+
+<!-- 底部固定按钮 -->
+<div class="bar-footer-fixed">
+  <div class="row">
+    <div class="col-50">
+      <a href="#" class="button button-big button-fill button-success" id="confirm-ok-cancel">弹出窗口</a>
+    </div>
+    <div class="col-50">
+      <a href="button.html" class="button button-big button-fill button-fa">按 &nbsp;钮</a>
+    </div>
+  </div>
+</div>
+<!-- 底部固定按钮结束 -->
+
+</div>
+<!-- end of page -->
+
+
+<!--
+/*
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+选择搭档【单选】 弹出 popup START
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+-->
+<div class="popup popup-partner">
+  
+  <!-- 顶部标题栏 -->
+  <header class="bar bar-nav">
+    <h1 class="title bg-primary">YXSUI 弹出标签</h1>
+  </header>
+  
+  <!-- 搜索栏 -->
+  <div class="bar bar-header-secondary">
+    <div class="searchbar">
+      <a class="searchbar-cancel">取消</a>
+      <div class="search-input">
+        <label class="icon icon-search" for="search"></label>
+        <input type="search" id='filter-input' placeholder='输入关键字...'/>
+      </div>
+    </div>
+  </div> 
+  
+  <div class="content">
+  <div class="list-block list-block-container">
+
+    <ul id="list-filter" class="list-filter list-filter-single">
+      <li class="item-content active">
+        <div class="item-inner">
+          <div class="item-title">伊泽瑞尔</div>
+          <span class="yxicon yxicon-selected select-radio"></span>
+        </div>
+      </li>
+
+      <li class="item-content">
+        <div class="item-inner">
+          <div class="item-title">索拉卡</div>
+          <span class="yxicon yxicon-selected select-radio"></span>
+        </div>
+      </li>
+
+      <li class="item-content disable">
+        <div class="item-inner">
+          <div class="item-before">
+            <div class="item-media"><img src="static/img/dolphin.png" alt=""></div>
+            <div class="item-title">亡灵战神</div>
+          </div>
+          <span class="yxicon yxicon-selected select-radio"></span>
+        </div>
+      </li>
+
+      <li class="item-content">
+        <div class="item-inner">
+          <div class="item-title disable-gray">盲僧</div>
+          <span class="yxicon yxicon-selected select-radio"></span>
+        </div>
+      </li>
+  </ul>
+  <!-- end of list-filter -->
+
+  </div>
+  <!-- end of list-block -->
+
+  </div>
+  <!-- end of content -->
+
+</div>
+<!-- 选择搭档  END-->
+
+
+
+<!--
+/*
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+选择搭档【多选】 弹出 popup START
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+-->
+<div class="popup popup-partner-multi">
+  
+  <!-- 顶部标题栏 -->
+  <header class="bar bar-nav">
+    <h1 class="title bg-primary">YXSUI 弹出标签</h1>
+  </header>
+  
+  <!-- 搜索栏 -->
+  <div class="bar bar-header-secondary">
+    <div class="searchbar">
+      <a class="searchbar-cancel">取消</a>
+      <div class="search-input">
+        <label class="icon icon-search" for="search"></label>
+        <input type="search" id='filter-input2' placeholder='输入关键字...'/>
+      </div>
+    </div>
+  </div> 
+  
+  <div class="content">
+  <div class="list-block list-block-container">
+
+    <ul id="list-filter2" class="list-filter list-filter-multi">
+      <li class="item-content active">
+        <div class="item-inner">
+          <div class="item-title">伊泽瑞尔</div>
+          <span class="yxicon yxicon-selected select-radio"></span>
+        </div>
+      </li>
+
+      <li class="item-content">
+        <div class="item-inner">
+          <div class="item-title">索拉卡</div>
+          <span class="yxicon yxicon-selected select-radio"></span>
+        </div>
+      </li>
+
+      <li class="item-content disable">
+        <div class="item-inner">
+          <div class="item-before">
+            <div class="item-media"><img src="static/img/dolphin.png" alt=""></div>
+            <div class="item-title">亡灵战神</div>
+          </div>
+          <span class="yxicon yxicon-selected select-radio"></span>
+        </div>
+      </li>
+
+      <li class="item-content">
+        <div class="item-inner">
+          <div class="item-title disable-gray">盲僧</div>
+          <span class="yxicon yxicon-selected select-radio"></span>
+        </div>
+      </li>
+  </ul>
+  <!-- end of list-filter -->
+
+  </div>
+  <!-- end of list-block -->
+
+  </div>
+  <!-- end of content -->
+
+  <!-- popup footer-fixed  注意这里有一个增加的 class 用来绑定确认多选事件 -->
+  <div class="bar-footer-fixed list-filter-multi-button">
+    <div class="row">
+      <div class="col-100">
+        <a href="#" class="button button-big button-fill button-success close-popup">确 &nbsp;定</a>
+      </div>
+    </div>
+  </div>
+  <!-- popup footer-fixed end -->
+
+</div>
+<!-- 选择搭档【多选】  END-->
+
+<script type="text/javascript" src="static/js/zepto.min.js"></script>
+<script type="text/javascript" src="static/js/sm.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.fastLiveFilter.js"></script>
+<script type="text/javascript">
+$(function() {
+  $("#datetime").datetimePicker({});
+
+  $("#date").calendar({});
+
+  //确认取消按钮
+ $(document).on('click', '#confirm-ok-cancel',function () {
+    $.confirm('Are you sure?',
+      function () {
+        $.alert('You clicked Ok button');
+      },
+      function () {
+        $.alert('You clicked Cancel button');
+      }
+    );
+  });
+
+   //操作
+   $(document).on('click', '#select-opt',function () {
+       var buttons1 = [
+        {
+          text: 'Q-光之束缚',
+          bold: true,
+          color: 'primary',
+          onClick: function() {
+            $.alert("你Q中了两个敌人");
+          }
+        },
+        {
+          text: 'R-终极闪光',
+          color: 'fa',
+          onClick: function() {
+            $.alert("你释放了一个终极闪光");
+          }
+        }
+      ];
+      var buttons2 = [
+        {
+          text: '取消释放',
+          bg: 'danger'
+        }
+      ];
+      var groups = [buttons1, buttons2];
+      $.actions(groups);
+  });
+/*
+++++++++++++++++++++++++++++++++++++++++++++++
+
+选择搭档【单选】
+
+++++++++++++++++++++++++++++++++++++++++++++++
+*/
+$(document).on('click', '#select-popup',function () {
+    
+    //弹出框的外层dom
+    var popupSelector = '.popup-partner';
+    
+    $.popup(popupSelector);
+    
+    //在这里保存一下input文本框的id，以供选定值后保存。
+    $(popupSelector).find('.list-filter')
+        .attr('data-popo', popupSelector)
+        .attr('data-input', '#partner-input');
+});
+    
+/*
+++++++++++++++++++++++++++++++++++++++++++++++
+
+选择搭档【多选】
+
+++++++++++++++++++++++++++++++++++++++++++++++
+*/
+$(document).on('click', '#select-popup-multi',function () {
+    
+    //弹出框的外层dom
+    var popupSelector = '.popup-partner-multi';
+    
+    $.popup(popupSelector);
+    
+    //在这里保存一下input文本框的id，以供选定值后保存。
+    $(popupSelector).find('.list-filter')
+        .attr('data-popo', popupSelector)
+        .attr('data-input', '#partner-input-multi');
+});
+    
+/*
+++++++++++++++++++++++++++++++++++++++++++++++
+
+弹出选择选项过滤搜索
+
+++++++++++++++++++++++++++++++++++++++++++++++
+*/
+    
+$("#filter-input").fastLiveFilter("#list-filter");
+$("#filter-input2").fastLiveFilter("#list-filter2");
+
+/*
+++++++++++++++++++++++++++++++++++++++++++++++
+
+弹出选择选项卡功能【单选】
+
+++++++++++++++++++++++++++++++++++++++++++++++
+*/
+$(document).on('click','.list-filter-single li', function() {
+
+    var $this = $(this), 
+        $parent = $this.parent(), 
+        inputName = $parent.attr('data-input'),
+        popName = $parent.attr('data-pop');
+
+    $parent.find('li').removeClass('active');    
+    $this.addClass('active');
+
+    $.closeModal(popName);
+
+    //取得选中的选项和附加数据（例如选择后既要保存名称，又需要保存id的情况）
+    var selectedValue = $this.find('.item-title').text(),
+        selectedData = $this.attr('data-data');
+
+    //将ID回填输入框，并将附加属性回填到对应的 data-data自定义属性值上
+    $(inputName).val(selectedValue).attr('data-data', selectedData);
+
+});
+    
+/*
+++++++++++++++++++++++++++++++++++++++++++++++
+
+弹出选择选项卡功能【多选】
+
+++++++++++++++++++++++++++++++++++++++++++++++
+*/
+$(document).on('click','.list-filter-multi li', function() {
+
+    var $this = $(this), 
+        $parent = $this.parent(), 
+        inputName = $parent.attr('data-input'),
+        popName = $parent.attr('data-pop');
+
+    $this.toggleClass('active');
+
+})
+.on('click', '.list-filter-multi-button', function(){
+    var $listFilter = $(this).parent().find('.list-filter'),
+        inputName = $listFilter.attr('data-input'),
+        popName = $listFilter.attr('data-pop');
+    
+    //拼装多选的内容
+    var valueList = '';  //用来保存选中的内容
+    var dataList = '';   //用来保存额外的属性
+    $listFilter.find('li').each(function(i,e){
+       var seperator = valueList.length == 0 ? '' : ',';    
+       if($(e).hasClass('active')){
+           valueList += seperator + $(e).find('.item-title').text();
+           dataList += seperator + $(e).attr('data-data');
+       } 
+    });
+    
+    //回填数据
+    $(inputName).val(valueList).attr('data-data', dataList);
+    $.closeModal(popName);
+    
+});
+    
+});
+</script>
+</body>
+</html>

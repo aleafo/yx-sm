@@ -1,0 +1,80 @@
+/*
+++++++++++++++++++++++++++++++++++++++++++++++
+
+标签的颜色系列
+
+++++++++++++++++++++++++++++++++++++++++++++++
+*/
+
+// 普通标签
+
+.label-text{
+	display: inline-block;
+	border-radius: px(1000);
+	height: px(24);
+	line-height: px(24);
+	font-size: px(14);
+	padding: 0 px(8);
+	white-space: nowrap;
+}
+
+// 特殊标签 ： 右下角为直角，带描边
+
+.label-text-special{
+	display: inline-block;
+    border-width: 1px;
+    border-style: solid;
+	white-space: nowrap;
+	border-radius: px(1000);
+	height: px(19);
+	line-height: px(19);
+	font-size: px(12);
+	padding: 0 .4rem;
+	border-radius: .4rem;	
+    border-bottom-right-radius: 0;
+}
+
+// 标签样式2
+.label-text-special.bg-primary{
+  border-color: $color-primary-border;
+}
+.label-text-special.bg-success{
+  border-color: $color-success-border;
+}
+.label-text-special.bg-info{
+  border-color: $color-info-border;
+}
+.label-text-special.bg-warning{
+  border-color: $color-warning-border;
+}
+.label-text-special.bg-danger{
+  border-color: $color-danger-border;
+}
+.label-text-special.bg-disable{
+  border-color: $color-disable-border;
+}
+.label-text-special.bg-fa{
+  border-color: $color-fa-border;
+}
+
+// 小标签
+.label-text-lit{
+	display: inline-block;
+	font-size: px(12);
+	transform: scale(.83);  //设置为10号字体
+	transform-origin: left;
+	height: px(14/.83);
+	line-height: px(14/.83);
+	padding: 0 px(8);
+	border-radius: px(1000);
+	white-space: nowrap;
+}
+
+//标签直角
+.label-text-plat{
+	height: px(13/.83);
+	line-height: px(13/.83);
+	border-radius: 0;
+	border-width: 1px;
+	border-style: solid;
+}

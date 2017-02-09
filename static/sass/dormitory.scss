@@ -1,0 +1,341 @@
+@import "_vars.scss";
+@import "_functions.scss";
+
+
+.dt-title{
+	height: px(40);
+	line-height: px(40);
+	text-align: right;
+	padding-right: px(15);
+	font-size: px(14);
+}
+.separator{
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    border-bottom: px(5) solid $gray-lightest;
+}
+.no-padding{
+    padding: 0;
+}
+
+/*
+++++++++++++++++++++++++++++++++++++++++++++++
+
+卡片样式
+
+++++++++++++++++++++++++++++++++++++++++++++++
+*/
+
+.card-group{
+	border-bottom: px(5) solid $gray-lightest;
+}
+.card-caption{
+	height: px(42);
+	background-color: $color-primary;
+	color: $white;
+	line-height: px(42);
+	text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 px(15);
+}
+.card-caption-between{ 
+   justify-content: space-between;
+}
+.card-caption-multi{
+    background-color: transparent;
+    color: $gray-dark;
+    font-size: px(14);
+    border-bottom: 1px solid $gray-lightest;
+}
+
+.card-items{
+	display: flex;
+	justify-content: space-between;
+    
+    .card-item{
+        border-right: 1px solid $gray-lightest;
+        text-align: center;
+        height: px(92);
+        padding-top: px(18);
+        .card-item-bd{
+            font-size: px(14);
+        }
+        .card-item-hd{
+            font-size: px(16);
+            margin-bottom: px(10);
+        }
+    }
+}
+
+
+.list-block{
+    min-height: px(210);
+    .item-link a{
+        display: block;
+        width: 100%;
+    }
+}
+
+/*
+++++++++++++++++++++++++++++++++++
+
+打卡列表页面
+
+++++++++++++++++++++++++++++++++++
+*/
+
+.block-item{
+    padding: px(15);
+    margin-bottom: px(5);
+    &:after{
+        position: absolute;
+        bottom: px(-5);
+        left: 0;
+        right: 0;
+        height: px(5);
+        background-color: $gray-lightest;
+        content: "";
+    }
+}
+
+.not-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.card-info{
+    line-height: px(26);
+    .card-info-hd{
+//      font-weight: bold;
+        font-size: px(16);
+        color: $gray-dark;
+        display: block;
+    }
+    .card-info-bd{
+        font-size: px(14);
+        color: $gray;
+    }
+    .card-info-after{
+        color: $gray-light;
+        font-size: px(12);
+    }
+}
+
+/*
++++++++++++++++++++++++++++++++++++++++++++++
+
+弹出的 班主任和监护人电话列表
+
++++++++++++++++++++++++++++++++++++++++++++++
+*/
+.addr-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 px(15);
+    font-size: px(14);
+    color: $gray-dark;
+    .addr-item-hd-caption{
+        font-size: px(12);
+        color: $gray-light;
+    }
+    .icon-me{
+        font-size: px(22);
+        color: $gray-lighter;
+    }
+    .icon-phone{
+        color: $color-success;
+        border: px(1) solid $color-success;
+        border-radius: px(1000);
+        padding: 0;
+        margin: 0;
+        line-height: px(25);
+        width: px(25);
+        height: px(25);
+        
+    }
+}
+
+/*
++++++++++++++++++++++++++++++++++++++++++++++
+
+特殊人员列表 - 班主任
+
++++++++++++++++++++++++++++++++++++++++++++++
+*/
+.special-item-hd{
+    display: block;
+    font-size: px(16);
+    margin-bottom: px(10);
+    color: $gray-dark;
+    .special-item-hd-addon{
+        font-size: px(14);
+    }
+}
+.special-item-bd{
+    font-size: px(14);
+    color: $gray-dark;
+    height: px(30);
+    line-height: px(30);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.special-item-ft{
+    font-size: px(12);
+    color: $gray-light;
+}
+.special-item-ft-dark{
+    color: $gray-dark;
+}
+.special-item-after{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: px(5);
+}
+.special-item-after-dt{
+    font-size: px(12);
+    color: $gray-light;
+    justify-content: flex-start;
+}
+/*
++++++++++++++++++++++++++++++++++++++++++++++
+
+已打卡人员列表 - 班主任
+
++++++++++++++++++++++++++++++++++++++++++++++
+*/
+.did-item{
+    color: $gray;
+    font-size: px(14);
+}
+.did-item-hd{
+    display: flex;
+    justify-content: space-between;
+    font-size: px(16);
+    margin-bottom: px(10);
+    border-bottom: px(1) solid $gray-lightest;
+    padding-bottom: px(10);
+    .did-item-hd-title{
+        color: $gray-dark;
+    }
+    .did-item-hd-addon{
+        font-size: px(12);
+        color: $gray-dark;
+    }
+}
+
+
+.did-item-bd{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.did-item-bd-before{
+    width: 80%;
+}
+
+.did-item-b{
+    
+    font-size: px(14);
+    height: px(30);
+    line-height: px(30);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    
+}
+.did-item-c{
+    font-size: px(12);
+    color: $gray-light;
+}
+.did-item-bd-after{
+    width: px(60);
+}
+.did-item-bd-after-dorm{
+    width: px(180);
+}
+
+/*
++++++++++++++++++++++++++++++++++++++++++++++
+
+复核 是否在宿舍页面
+
++++++++++++++++++++++++++++++++++++++++++++++
+*/
+.recheck-title{
+    font-size: px(16);
+    color: $gray-dark;
+    text-align: center;
+    height: px(80);
+    padding-top: px(15);
+    background-image: url(../img/recheck-title-bg.png);
+    background-size: cover;
+    
+}
+
+.recheck-content{
+    position: relative;
+}
+
+.recheck-info-list{
+    line-height: px(26);
+    dt{
+        font-size: px(12);
+        color: $gray-light;
+    }
+    dd{
+        margin: 0;
+        font-size: px(16);
+        color: $gray-dark;
+        margin-bottom: px(10);
+    }
+}
+
+.stamp-container{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.stamp{
+    background-image: url(../img/stamp.png);
+    background-size: cover;
+    width: px(110);
+    height: px(73);
+    display: inline-block;
+}
+.stamp-in{
+    background-position: -100% 0%;
+}
+.stamp-out{
+    background-position: 0% 0%;
+}
+
+/*
++++++++++++++++++++++++++++++++++++++++++++++
+
+特殊人员标记， 编辑页面
+
++++++++++++++++++++++++++++++++++++++++++++++
+*/
+.list-filter{
+    
+    .item-title{
+        .item-title-hd{
+            font-size: px(15);
+            color: $gray-dark;
+            margin-top: px(5);
+        }
+        .item-title-bd{
+            font-size: px(14);
+            color: $gray;
+            margin: px(5) 0;
+        }
+    }
+}
