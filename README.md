@@ -3,11 +3,13 @@
 
 可以从首页依次进入各个分支页面。
 
-![index](design/index.png)
+<div style="text-align:center">
+<img src="design/index.png" width="550" />
 
-![button](design/button.png)
+<img src="design/button.png" width="550" />
 
-![accordion](design/accordion.png)
+<img src="design/accordion.png" width="550" />
 
-![label](design/label.png)
+<img src="design/label.png" width="550" />
 
+</div>
